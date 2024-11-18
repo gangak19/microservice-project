@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: shippingservice-deployment
+  namespace: default  # Change if needed
+spec:
+  replicas: 1  # Set the desired number of replicas
+  selector:
+    matchLabels:
+      app: shippingservice
+  template:
+    metadata:
+      labels:
+        app: shippingservice
+    spec:
+      containers:
+        - name: shippingservice
+          image: us-central1-docker.pkg.dev/google/samples/microservices/demo/shippingservice:v0.10.2
+          ports:
+            - containerPort: 50051
+          envFrom:
+            - configMapRef:
+                name: shippingservice-config  # Reference to the ConfigMap
