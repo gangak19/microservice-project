@@ -12,5 +12,4 @@ spec:
     - protocol: TCP
       port: 50051       # Service port
       targetPort: 50051 # Target container port
-      nodePort: 30003
-  type: NodePort
+  type: ClusterIP

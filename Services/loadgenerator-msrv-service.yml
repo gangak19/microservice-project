@@ -12,5 +12,4 @@ spec:
     - protocol: TCP
       port: 80         # Service port
       targetPort: 80   # Target container port
-      nodePort: 30085  # Fixed NodePort (optional)
-  type: NodePort
+  type: ClusterIP

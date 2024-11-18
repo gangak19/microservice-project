@@ -12,5 +12,4 @@ spec:
     - protocol: TCP
       port: 7070        # Service port
       targetPort: 7070  # Target container port
-      nodePort: 30070   # Fixed NodePort (optional)
-  type: NodePort
+  type: ClusterIP

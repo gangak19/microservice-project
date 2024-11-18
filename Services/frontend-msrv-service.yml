@@ -12,5 +12,5 @@ spec:
     - protocol: TCP
       port: 8080       # Service port
       targetPort: 8080 # Target container port
-      nodePort: 30080  # NodePort (optional; Kubernetes assigns one if not specified)
+      nodePort: 30001
   type: NodePort

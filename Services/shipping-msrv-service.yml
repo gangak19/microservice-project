@@ -10,5 +10,4 @@ spec:
     - protocol: TCP
       port: 80      # Port exposed inside the cluster
       targetPort: 50051  # Port exposed by your app
-      nodePort: 30010  # NodePort range (typically 30000-32767)
-  type: NodePort
+  type: ClusterIP
