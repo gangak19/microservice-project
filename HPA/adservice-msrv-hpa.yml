@@ -2,7 +2,7 @@ apiVersion: autoscaling/v2
 kind: HorizontalPodAutoscaler
 metadata:
   name: adservice-hpa
-  namespace: default  # Change if needed
+  namespace: msrv  # Change if needed
 spec:
   scaleTargetRef:
     apiVersion: apps/v1

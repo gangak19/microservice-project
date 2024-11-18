@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: currencyservice-deployment
-  namespace: default  # Change if needed
+  namespace: msrv  # Change if needed
 spec:
   replicas: 1  # Set the desired number of replicas
   selector:

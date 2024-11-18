@@ -2,7 +2,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: currencyservice-service
-  namespace: default  # Change if needed
+  namespace: msrv  # Change if needed
 spec:
   selector:
     app: currencyservice
