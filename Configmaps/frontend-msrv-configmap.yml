@@ -6,7 +6,7 @@ metadata:
 data:
   PORT: "8080"
   PRODUCT_CATALOG_SERVICE_ADDR: "productcatalogservice:3550"
-  CURRENCY_SERVICE_ADDR: "currencyservice:30007"
+  CURRENCY_SERVICE_ADDR: "currencyservice:7000"
   CART_SERVICE_ADDR: "cartservice:7070"
   RECOMMENDATION_SERVICE_ADDR: "recommendationservice:8080"
   SHIPPING_SERVICE_ADDR: "shippingservice:50051"

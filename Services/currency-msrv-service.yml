@@ -8,6 +8,6 @@ spec:
     app: currencyservice
   ports:
     - protocol: TCP
-      port: 80      # Port exposed inside the cluster
+      port: 7000      # Port exposed inside the cluster
       targetPort: 7000  # Port exposed by your app
   type: ClusterIP
