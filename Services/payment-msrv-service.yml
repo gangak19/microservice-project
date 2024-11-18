@@ -12,5 +12,5 @@ spec:
     - protocol: TCP
       port: 50051       # Service port
       targetPort: 50051 # Target container port
-      nodeport: 30003
+      nodePort: 30003
   type: NodePort
