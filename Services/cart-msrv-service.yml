@@ -9,7 +9,7 @@ spec:
   selector:
     app: cartservice
   ports:
-    - protocol: TCP
+    - name: grpc    
       port: 7070        # Service port
       targetPort: 7070  # Target container port
   type: ClusterIP

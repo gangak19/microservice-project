@@ -9,7 +9,7 @@ spec:
   selector:
     app: redis-cart
   ports:
-    - protocol: TCP
+    - name: grpc
       port: 6379        # Service port
       targetPort: 6379  # Target container port
   type: ClusterIP

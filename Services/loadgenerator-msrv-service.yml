@@ -9,7 +9,7 @@ spec:
   selector:
     app: loadgenerator
   ports:
-    - protocol: TCP
+    - name: grpc
       port: 80         # Service port
       targetPort: 80   # Target container port
   type: ClusterIP

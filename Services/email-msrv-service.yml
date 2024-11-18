@@ -9,7 +9,7 @@ spec:
   selector:
     app: emailservice
   ports:
-    - protocol: TCP
-      port: 8080
+    - name: grpc
+      port: 5000
       targetPort: 8080
   type: ClusterIP

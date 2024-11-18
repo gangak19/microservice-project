@@ -9,7 +9,7 @@ spec:
   selector:
     app: paymentservice
   ports:
-    - protocol: TCP
+    - name: grpc
       port: 50051       # Service port
       targetPort: 50051 # Target container port
   type: ClusterIP
