@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: adservice-service
+  namespace: default  # Change if needed
+spec:
+  selector:
+    app: adservice
+  ports:
+    - protocol: TCP
+      port: 80        # Port exposed inside the cluster
+      targetPort: 9555  # Port exposed by your app
+      nodePort: 30009  # NodePort range (typically 30000-32767)
+  type: NodePort

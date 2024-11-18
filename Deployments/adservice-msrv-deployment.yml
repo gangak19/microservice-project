@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: adservice-deployment
+  namespace: default  # Change if needed
+spec:
+  replicas: 1  # Set the desired number of replicas
+  selector:
+    matchLabels:
+      app: adservice
+  template:
+    metadata:
+      labels:
+        app: adservice
+    spec:
+      containers:
+        - name: adservice
+          image: us-central1-docker.pkg.dev/google/samples/microservices/demo/adservice:v0.10.2
+          ports:
+            - containerPort: 9555
+          envFrom:
+            - configMapRef:
+                name: adservice-config  # Reference to the ConfigMap
