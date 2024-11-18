@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: loadgenerator-deployment
+  namespace: msrv
+  labels:
+    app: loadgenerator
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: loadgenerator
+  template:
+    metadata:
+      labels:
+        app: loadgenerator
+    spec:
+      containers:
+        - name: loadgenerator-container
+          image: us-central1-docker.pkg.dev/google-samples/microservices-demo/loadgenerator:v0.10.2
+          ports:
+            - containerPort: 80
+          envFrom:
+            - configMapRef:
+                name: loadgenerator-env-config
+          resources:
+            requests:
+              memory: "256Mi"
+              cpu: "100m"
+            limits:
+              memory: "512Mi"
+              cpu: "200m"
