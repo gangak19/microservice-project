@@ -10,7 +10,6 @@ spec:
     app: frontend
   ports:
     - name: http
-      port: 8080       # Service port
+      port: 80       # Service port
       targetPort: 8080 # Target container port
-      nodePort: 30001
-  type: NodePort
+  type: ClusterIP
