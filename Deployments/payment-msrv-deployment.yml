@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: paymentservice-deployment
+  namespace: msrv
+  labels:
+    app: paymentservice
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: paymentservice
+  template:
+    metadata:
+      labels:
+        app: paymentservice
+    spec:
+      containers:
+        - name: paymentservice-container
+          image: us-central1-docker.pkg.dev/google-samples/microservices-demo/paymentservice:v0.10.2
+          ports:
+            - containerPort: 50051
+          envFrom:
+            - configMapRef:
+                name: paymentservice-env-config
