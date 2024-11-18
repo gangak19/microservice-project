@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: recommendationservice-deployment
+  namespace: msrv
+  labels:
+    app: recommendationservice
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: recommendationservice
+  template:
+    metadata:
+      labels:
+        app: recommendationservice
+    spec:
+      containers:
+        - name: recommendationservice-container
+          image: us-central1-docker.pkg.dev/google-samples/microservices-demo/recommendationservice:v0.10.2
+          ports:
+            - containerPort: 8080
+          envFrom:
+            - configMapRef:
+                name: recommendationservice-env-config
