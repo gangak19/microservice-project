@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: currencyservice-deployment
+  namespace: default  # Change if needed
+spec:
+  replicas: 1  # Set the desired number of replicas
+  selector:
+    matchLabels:
+      app: currencyservice
+  template:
+    metadata:
+      labels:
+        app: currencyservice
+    spec:
+      containers:
+        - name: currencyservice
+          image: us-central1-docker.pkg.dev/google/samples/microservices/demo/currencyservice:v0.10.2
+          ports:
+            - containerPort: 7000
+          envFrom:
+            - configMapRef:
+                name: currencyservice-config  # Reference to the ConfigMap created above
