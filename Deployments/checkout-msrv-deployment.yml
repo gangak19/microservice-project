@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: checkoutservice-deployment
+  namespace: msrv
+  labels:
+    app: checkoutservice
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: checkoutservice
+  template:
+    metadata:
+      labels:
+        app: checkoutservice
+    spec:
+      containers:
+        - name: checkoutservice-container
+          image: us-central1-docker.pkg.dev/google-samples/microservices-demo/checkoutservice:v0.10.2
+          ports:
+            - containerPort: 5050
+          envFrom:
+            - configMapRef:
+                name: checkoutservice-env-config
