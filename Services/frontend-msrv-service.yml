@@ -9,7 +9,7 @@ spec:
   selector:
     app: frontend
   ports:
-    - name: grpc
+    - name: http
       port: 8080       # Service port
       targetPort: 8080 # Target container port
       nodePort: 30001

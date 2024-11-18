@@ -8,6 +8,6 @@ spec:
     app: adservice
   ports:
     - name: grpc      
-      port: 80        # Port exposed inside the cluster
+      port: 9555        # Port exposed inside the cluster
       targetPort: 9555  # Port exposed by your app
   type: ClusterIP
