@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: cartservice-env-config
+  namespace: msrv
+data:
+  REDIS_ADDR: "redis-cart:6379"
